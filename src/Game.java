@@ -5,7 +5,7 @@
  *
  */
 public class Game {
-	public int[] rollValues = new int[21];
+	private int[] rollValues = new int[21];
 	private int rollCounter = 0;
 
 	/**
