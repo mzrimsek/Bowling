@@ -103,14 +103,14 @@ public class BowlingGameTest {
 		// frame 10
 		game.roll(2);
 		game.roll(8);
-		// got spare - bonus frames
+		// got spare - bonus frame
 		game.roll(6);
 		assertEquals(133, game.score());
 	}
 
 	/**
 	 * A strike is when the player hits all 10 pins in the first roll of a frame
-	 * 
+	 *
 	 * @param game
 	 */
 	private void rollStrike(Game game) {
@@ -119,7 +119,7 @@ public class BowlingGameTest {
 
 	/**
 	 * A spare is when the player hits all 10 pins with both rolls of the frame
-	 * 
+	 *
 	 * @param game
 	 */
 	private void rollSpare(Game game) {
@@ -129,7 +129,7 @@ public class BowlingGameTest {
 
 	/**
 	 * Does several rolls of the same pin value
-	 * 
+	 *
 	 * @param game
 	 * @param numRolls
 	 *            How many rolls to execute

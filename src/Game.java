@@ -26,8 +26,8 @@ public class Game {
 	 * @return Total score for game
 	 */
 	public int score() {
-		int score = 0; // tracks score
-		int rollIndex = 0; // track which roll currently on
+		int score = 0;
+		int rollIndex = 0;
 		for (int frame = 0; frame < 10; frame++) {
 			// check if rolled a strike
 			// 10 + value of next 2 balls rolled
