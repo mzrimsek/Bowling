@@ -1,6 +1,6 @@
 /**
  * A short program to run a game of bowling
- * 
+ *
  * @author Mike Zrimsek
  *
  */
@@ -10,9 +10,9 @@ public class Game {
 
 	/**
 	 * Execute one roll
-	 * 
+	 *
 	 * @param numPins
-	 *            Numbers of pins hit
+	 *            Numbers of pins hit, must be between 0 and 10
 	 */
 	public void roll(int numPins) {
 		rollValues[rollCounter++] = numPins;
@@ -20,7 +20,7 @@ public class Game {
 
 	/**
 	 * Calculate total score of game based on values for each roll
-	 * 
+	 *
 	 * @return Total score for game
 	 */
 	public int score() {
