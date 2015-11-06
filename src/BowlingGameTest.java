@@ -64,12 +64,48 @@ public class BowlingGameTest {
 		rollMany(game, 12, 10);
 		assertEquals(300, game.score());
 	}
-	
+
 	@Test
 	public void testAllSpare() {
 		game = new Game();
 		rollMany(game, 21, 5);
 		assertEquals(150, game.score());
+	}
+
+	@Test
+	public void testKataExampleGame() {
+		game = new Game();
+		// frame 1
+		game.roll(1);
+		game.roll(4);
+		// frame 2
+		game.roll(4);
+		game.roll(5);
+		// frame 3
+		game.roll(6);
+		game.roll(4);
+		// frame 4
+		game.roll(5);
+		game.roll(5);
+		// frame 5
+		game.roll(10);
+		// frame 6
+		game.roll(0);
+		game.roll(1);
+		// frame 7
+		game.roll(7);
+		game.roll(3);
+		// frame 8
+		game.roll(6);
+		game.roll(4);
+		// frame 9
+		game.roll(10);
+		// frame 10
+		game.roll(2);
+		game.roll(8);
+		// got spare - bonus frames
+		game.roll(6);
+		assertEquals(133, game.score());
 	}
 
 	/**
@@ -98,7 +134,7 @@ public class BowlingGameTest {
 	 * @param numRolls
 	 *            How many rolls to execute
 	 * @param numPins
-	 *            Number of pins
+	 *            Number of pins hit
 	 */
 	private void rollMany(Game game, int numRolls, int numPins) {
 		for (int i = 0; i < numRolls; i++) {

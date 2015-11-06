@@ -1,5 +1,7 @@
 /**
- * A short program to run a game of bowling
+ * A short program to run a game of bowling. We are assuming that the maximum
+ * number of frames for the game is 10, and thus the maximum number of rolls to
+ * be 21 (2 for each from plus a possible bonus one on the last frame).
  *
  * @author Mike Zrimsek
  *
@@ -12,7 +14,7 @@ public class Game {
 	 * Execute one roll
 	 *
 	 * @param numPins
-	 *            Numbers of pins hit, must be between 0 and 10
+	 *            Numbers of pins hit; must be between 0 and 10
 	 */
 	public void roll(int numPins) {
 		rollValues[rollCounter++] = numPins;
@@ -45,5 +47,13 @@ public class Game {
 			}
 		}
 		return score;
+	}
+
+	public int[] getRollValues() {
+		return rollValues;
+	}
+
+	public int getRollCounter() {
+		return rollCounter;
 	}
 }
