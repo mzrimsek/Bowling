@@ -1,27 +1,30 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class BowlingGameTest {
 	private Game game;
+	
+	@Before
+	public void setUp(){
+		game = new Game();
+	}
 
 	@Test
 	public void testAllZero() {
-		game = new Game();
 		rollMany(game, 20, 0);
 		assertEquals(0, game.score());
 	}
 
 	@Test
 	public void testAllOne() {
-		game = new Game();
 		rollMany(game, 20, 1);
 		assertEquals(20, game.score());
 	}
 
 	@Test
 	public void testOneStrike() {
-		game = new Game();
 		rollStrike(game);
 		game.roll(5);
 		game.roll(2);
@@ -31,7 +34,6 @@ public class BowlingGameTest {
 
 	@Test
 	public void testOneSpare() {
-		game = new Game();
 		rollSpare(game);
 		game.roll(5);
 		game.roll(2);
@@ -41,7 +43,6 @@ public class BowlingGameTest {
 
 	@Test
 	public void testLastFrameStrike() {
-		game = new Game();
 		rollMany(game, 18, 0);
 		rollStrike(game);
 		game.roll(5);
@@ -51,7 +52,6 @@ public class BowlingGameTest {
 
 	@Test
 	public void testLastFrameSpare() {
-		game = new Game();
 		rollMany(game, 18, 0);
 		rollSpare(game);
 		game.roll(5);
@@ -60,21 +60,18 @@ public class BowlingGameTest {
 
 	@Test
 	public void testPerfectGame() {
-		game = new Game();
 		rollMany(game, 12, 10);
 		assertEquals(300, game.score());
 	}
 
 	@Test
 	public void testAllSpare() {
-		game = new Game();
 		rollMany(game, 21, 5);
 		assertEquals(150, game.score());
 	}
 
 	@Test
 	public void testKataExampleGame() {
-		game = new Game();
 		// frame 1
 		game.roll(1);
 		game.roll(4);
